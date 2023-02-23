@@ -16,6 +16,11 @@
     border-radius: 50%;
   }
 
+ul.w li.w {
+    text-align: left;
+    list-style-type: circle;
+}
+
 ul {
     overflow: auto;
 }
