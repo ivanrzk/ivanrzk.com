@@ -154,14 +154,22 @@ a:hover {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 9999;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     transition: all var(--transition-normal);
     width: 100%;
     overflow-x: hidden;
     height: auto;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-overflow-scrolling: touch;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
 }
 
 [data-theme="dark"] .navbar {
@@ -311,6 +319,10 @@ a:hover {
     display: none;
     gap: var(--space-md);
     align-items: center;
+    z-index: 10000;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .up-button {
@@ -326,6 +338,20 @@ a:hover {
     cursor: pointer;
     transition: all var(--transition-fast);
     padding: var(--space-sm);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
 }
 
 .up-button:hover {
@@ -333,9 +359,16 @@ a:hover {
     transform: translateY(-1px);
 }
 
+.up-button:active {
+    transform: translateY(0) scale(0.95);
+    background: var(--primary-dark);
+}
+
 .up-button svg {
     width: 20px;
     height: 20px;
+    pointer-events: none;
+    -webkit-pointer-events: none;
 }
 
 .theme-toggle-mobile {
@@ -351,9 +384,29 @@ a:hover {
     cursor: pointer;
     transition: all var(--transition-fast);
     padding: var(--space-sm);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
 }
 
 .theme-toggle-mobile:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.theme-toggle-mobile:active {
+    transform: scale(0.95);
     background: var(--primary-color);
     color: white;
 }
@@ -362,6 +415,8 @@ a:hover {
     width: 20px;
     height: 20px;
     transition: transform var(--transition-normal);
+    pointer-events: none;
+    -webkit-pointer-events: none;
 }
 
 .theme-toggle-mobile:hover svg {
