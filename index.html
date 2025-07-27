@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ivan Raczkowski - DevOps & Security Lead</title>
-    <meta name="description" content="DevOps and Security Lead with over 10 years of experience in infrastructure, automation, and cloud technologies. Expert in Azure, Kubernetes, and network security.">
+    <meta name="description" content="DevOps and Security Lead with over 10 years of experience in infrastructure, automation, and cloud technologies. Expert in Azure, infrastructure automation, and network security.">
     
-    <!-- Modern Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Modern CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/modern.css">
     
     <!-- Smooth scrolling -->
@@ -20,7 +20,7 @@
             scroll-behavior: smooth;
         }
     </style>
-</head>
+    </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -28,28 +28,44 @@
             <div class="nav-brand">
                 <a href="#home">Ivan Raczkowski</a>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="#" class="cv-link">Download CV</a></li>
-                <li>
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                        <svg class="sun-icon" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
-                        </svg>
-                        <svg class="moon-icon" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                        </svg>
-                    </button>
-                </li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#" class="cv-link">Download CV</a></li>
+                    <li>
+                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                            <svg class="sun-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                            </svg>
+                            <svg class="moon-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Mobile Buttons -->
+            <div class="mobile-buttons">
+                <button class="up-button" id="up-button" aria-label="Go to top">
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <button class="theme-toggle-mobile" id="theme-toggle-mobile" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                    </svg>
+                    <svg class="moon-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
@@ -63,12 +79,10 @@
                     <span class="gradient-text">Ivan Raczkowski</span>
                 </h1>
                 <p class="hero-subtitle">DevOps & Security Lead</p>
-                <p class="hero-description">
-                    Azure • Kubernetes • Infrastructure Automation • Network Security
-                </p>
+                <p class="hero-description">Transforming infrastructure through automation, security, and cloud-native solutions</p>
                 <div class="hero-buttons">
-                    <a href="#about" class="btn btn-primary">Learn More</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="#about" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Let's Connect</a>
                 </div>
             </div>
         </div>
@@ -79,7 +93,7 @@
 
     <!-- About Section -->
     <section id="about" class="section">
-        <div class="container">
+                <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
                 <p class="section-subtitle">DevOps and Security specialist from Argentina</p>
@@ -88,13 +102,15 @@
                 <div class="about-text">
                     <h3>Hello, I'm Ivan</h3>
                     <p>
-                        As the Head of DevOps and Security Lead with over 10 years of experience in the software industry, 
-                        I specialize in designing and implementing scalable infrastructure solutions that drive business growth.
+                        As a DevOps & Security Lead with over 10 years of experience, I specialize in architecting scalable 
+                        cloud solutions that drive business transformation. My expertise spans Azure cloud services, 
+                        infrastructure automation, and enterprise security, helping organizations achieve operational 
+                        excellence through modern DevOps practices.
                     </p>
                     <p>
-                        My expertise spans across cloud platforms, containerization, automation, and security. I have successfully 
-                        led teams in implementing CI/CD pipelines, managing Kubernetes clusters, and securing enterprise environments 
-                        for companies ranging from startups to Fortune 500 organizations.
+                        I've successfully led digital transformation initiatives for companies across various industries, implementing 
+                        CI/CD pipelines, managing cloud infrastructure, and establishing security-first development 
+                        practices that enable rapid, reliable software delivery.
                     </p>
                     <div class="about-stats">
                         <div class="stat">
@@ -103,7 +119,7 @@
                         </div>
                         <div class="stat">
                             <span class="stat-number">50+</span>
-                            <span class="stat-label">Projects Completed</span>
+                            <span class="stat-label">Projects Delivered</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">10+</span>
@@ -122,9 +138,9 @@
     <section id="skills" class="section section-alt">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <p class="section-subtitle">My technical capabilities and knowledge areas</p>
-            </div>
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Core competencies and specialized knowledge areas</p>
+                                </div>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Cloud & DevOps</h3>
@@ -134,27 +150,27 @@
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 95%"></div>
                             </div>
-                        </div>
+                                </div>
                         <div class="skill-item">
-                            <span class="skill-name">Kubernetes & Docker</span>
+                            <span class="skill-name">Docker</span>
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
+                                <div class="skill-progress" style="width: 85%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">CI/CD Pipelines</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 92%"></div>
-                            </div>
+                                </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Terraform & IaC</span>
+                            <span class="skill-name">IaC like Ansible, Terraform, Bicep</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 88%"></div>
-                            </div>
+                            </div>                    
                         </div>
                     </div>
-                </div>
+                                </div>
                 <div class="skill-category">
                     <h3>Security & Networking</h3>
                     <div class="skill-items">
@@ -163,7 +179,7 @@
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 90%"></div>
                             </div>
-                        </div>
+                                </div>
                         <div class="skill-item">
                             <span class="skill-name">Cisco Systems</span>
                             <div class="skill-bar">
@@ -174,13 +190,13 @@
                             <span class="skill-name">Mikrotik</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 88%"></div>
-                            </div>
+                                </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Penetration Testing</span>
+                            <span class="skill-name">Cybersecurity Awareness</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 80%"></div>
-                            </div>
+                            </div>                    
                         </div>
                     </div>
                 </div>
@@ -191,8 +207,8 @@
                             <span class="skill-name">Linux Administration</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 92%"></div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                         <div class="skill-item">
                             <span class="skill-name">Monitoring & Logging</span>
                             <div class="skill-bar">
@@ -203,38 +219,38 @@
                             <span class="skill-name">Scripting (Bash/Python)</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 85%"></div>
-                            </div>
+                    </div>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Git & Version Control</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 90%"></div>
-                            </div>
+                    </div>
                         </div>
                     </div>
                 </div>
-            </div>
+             </div>
         </div>
     </section>
 
     <!-- Certifications Section -->
     <section id="certifications" class="section">
-        <div class="container">
+             <div class="container">   
             <div class="section-header">
                 <h2 class="section-title">Licenses & Certifications</h2>
                 <p class="section-subtitle">Professional certifications and achievements</p>
-            </div>
+                    </div>
             <div class="certifications-grid">
                 <div class="certification-card">
                     <img src="img/ccna.png" alt="CCNA" class="cert-logo">
                     <h3>CCNA</h3>
                     <p>Cisco Certified Network Associate</p>
-                </div>
+                    </div>
                 <div class="certification-card">
                     <img src="img/mtcna1.png" alt="MTCNA" class="cert-logo">
                     <h3>MTCNA</h3>
                     <p>Mikrotik Certified Network Associate</p>
-                </div>
+                    </div>
                 <div class="certification-card">
                     <img src="img/mtcre1.png" alt="MTCRE" class="cert-logo">
                     <h3>MTCRE</h3>
@@ -244,24 +260,24 @@
                     <img src="img/mtctce1.jpg" alt="MTCTCE" class="cert-logo">
                     <h3>MTCTCE</h3>
                     <p>Mikrotik Certified Traffic Control Engineer</p>
-                </div>
+                    </div>
                 <div class="certification-card">
                     <img src="img/mtcine1.png" alt="MTCINE" class="cert-logo">
                     <h3>MTCINE</h3>
                     <p>Mikrotik Certified Inter-Networking Engineer</p>
-                </div>
+                    </div>
                 <div class="certification-card">
                     <img src="img/nse2.png" alt="NSE2" class="cert-logo">
                     <h3>NSE2</h3>
                     <p>Fortinet Network Security Associate</p>
-                </div>
+                    </div>
+                </div>    
             </div>
-        </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience" class="section section-alt">
-        <div class="container">
+                <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Work Experience</h2>
                 <p class="section-subtitle">My professional journey and achievements</p>
@@ -275,13 +291,14 @@
                             <span class="timeline-period">2021 - Present</span>
                         </div>
                         <p>
-                            Leading DevOps initiatives and security strategies across the organization. Implementing CI/CD pipelines, 
-                            managing Kubernetes clusters, and ensuring infrastructure security. Driving automation and best practices 
+                            Leading enterprise DevOps transformation and security strategy across the organization. 
+                            Orchestrating cloud-native architecture, implementing advanced CI/CD pipelines, and 
+                            establishing security-first development practices. Driving automation and best practices 
                             for scalable cloud-native applications.
                         </p>
                         <div class="timeline-tags">
                             <span class="tag">Azure</span>
-                            <span class="tag">Kubernetes</span>
+                            <span class="tag">Bicep</span>
                             <span class="tag">DevOps</span>
                             <span class="tag">Security</span>
                             <span class="tag">CI/CD</span>
@@ -292,7 +309,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <h3>Infrastructure Consultant</h3>
-                            <span class="timeline-company">Neural Soft</span>
+                            <span class="timeline-company">NeuralSoft</span>
                             <span class="timeline-period">2016 - 2021</span>
                         </div>
                         <p>
@@ -305,7 +322,7 @@
                             <span class="tag">Consulting</span>
                             <span class="tag">Cloud Migration</span>
                             <span class="tag">Automation</span>
-                        </div>
+            </div> 
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -333,7 +350,7 @@
                             <h3>Network and IT Support Engineer</h3>
                             <span class="timeline-company">Neoris</span>
                             <span class="timeline-period">2014 - 2015</span>
-                        </div>
+            </div>
                         <p>
                             Provided technical support and network administration for enterprise clients. Implemented network security 
                             solutions, managed IT infrastructure, and delivered customer-focused technical solutions.
@@ -343,7 +360,7 @@
                             <span class="tag">IT Administration</span>
                             <span class="tag">Security</span>
                             <span class="tag">Customer Support</span>
-                        </div>
+                            </div>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -362,19 +379,19 @@
                             <span class="tag">Telecommunications</span>
                             <span class="tag">Routing</span>
                             <span class="tag">Network Security</span>
-                        </div>
+                            </div>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="container">
+            <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Get in Touch</h2>
-                <p class="section-subtitle">Let's discuss your next project</p>
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">Ready to transform your infrastructure? Let's discuss your next project</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
@@ -382,19 +399,7 @@
                         <div class="contact-details">
                             <h3>Email</h3>
                             <a href="mailto:ivan.rzk@gmail.com">ivan.rzk@gmail.com</a>
-                        </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <a href="tel:+543462653796">+54 346 265 3796</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-details">
-                            <h3>Location</h3>
-                            <span>Argentina</span>
-                        </div>
                     </div>
                 </div>
                 <div class="social-links">
@@ -410,8 +415,8 @@
                 </div>
             </div>
         </div>
-    </section>
-
+        </section>
+        
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -426,7 +431,7 @@
         </div>
     </footer>
 
-    <!-- Modern JavaScript -->
+    <!-- Custom JavaScript -->
     <script src="js/modern.js"></script>
-</body>
+    </body>
 </html>

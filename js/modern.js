@@ -18,6 +18,7 @@ class ModernWebsite {
         this.setupCursorEffects();
         this.setupPerformanceOptimizations();
         this.setupThemeToggle();
+        this.setupUpButton();
     }
 
     setupNavigation() {
@@ -147,32 +148,7 @@ class ModernWebsite {
     }
 
     setupMobileMenu() {
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
-            });
-
-            // Close menu when clicking on a link
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('active');
-                    navToggle.classList.remove('active');
-                });
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                    navMenu.classList.remove('active');
-                    navToggle.classList.remove('active');
-                }
-            });
-        }
+        // Mobile menu is now hidden on small screens, no JavaScript needed
     }
 
     setupSmoothScrolling() {
@@ -384,13 +360,14 @@ class ModernWebsite {
 
     setupThemeToggle() {
         const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
         const html = document.documentElement;
         
         // Check for saved theme preference or default to light mode
         const savedTheme = localStorage.getItem('theme') || 'light';
         html.setAttribute('data-theme', savedTheme);
         
-        themeToggle.addEventListener('click', () => {
+        const toggleTheme = () => {
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
@@ -416,7 +393,43 @@ class ModernWebsite {
                     navbar.style.background = isDark ? 'rgba(15, 23, 42, 0.95)' : 'rgba(255, 255, 255, 0.95)';
                 }
             }
-        });
+        };
+        
+        // Add event listeners to both theme toggles
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+        
+        if (themeToggleMobile) {
+            themeToggleMobile.addEventListener('click', toggleTheme);
+        }
+    }
+
+    setupUpButton() {
+        const upButton = document.getElementById('up-button');
+        
+        if (upButton) {
+            // Show/hide up button based on scroll position
+            const toggleUpButton = () => {
+                if (window.scrollY > 300) {
+                    upButton.style.display = 'flex';
+                } else {
+                    upButton.style.display = 'none';
+                }
+            };
+            
+            // Scroll to top functionality
+            upButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Initial check and scroll listener
+            toggleUpButton();
+            window.addEventListener('scroll', toggleUpButton);
+        }
     }
 }
 
@@ -460,10 +473,10 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
             .then(registration => {
-                console.log('SW registered: ', registration);
+                // SW registered successfully
             })
             .catch(registrationError => {
-                console.log('SW registration failed: ', registrationError);
+                // SW registration failed
             });
     });
 } 
