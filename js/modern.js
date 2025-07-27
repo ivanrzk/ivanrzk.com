@@ -9,6 +9,8 @@ class ModernWebsite {
         this.setupScrollAnimations();
         this.setupSkillBars();
         this.setupMobileMenu();
+        this.setupThemeToggle();
+        this.setupUpButton();
         this.setupSmoothScrolling();
         this.setupParallaxEffects();
         this.setupIntersectionObserver();
@@ -17,8 +19,17 @@ class ModernWebsite {
         this.setupHoverEffects();
         this.setupCursorEffects();
         this.setupPerformanceOptimizations();
-        this.setupThemeToggle();
-        this.setupUpButton();
+        
+        // Remove service worker registration to prevent 404 errors
+        // if ('serviceWorker' in navigator) {
+        //     navigator.serviceWorker.register('/sw.js')
+        //         .then(registration => {
+        //             console.log('SW registered: ', registration);
+        //         })
+        //         .catch(registrationError => {
+        //             console.log('SW registration failed: ', registrationError);
+        //         });
+        // }
     }
 
     setupNavigation() {
@@ -236,6 +247,7 @@ class ModernWebsite {
 
     setupCounterAnimations() {
         const stats = document.querySelectorAll('.stat-number');
+        
         const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -466,17 +478,4 @@ window.addEventListener('orientationchange', () => {
         const vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }, 100);
-});
-
-// Service Worker registration (optional)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
-                // SW registered successfully
-            })
-            .catch(registrationError => {
-                // SW registration failed
-            });
-    });
-} 
+}); 
