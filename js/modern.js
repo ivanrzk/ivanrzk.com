@@ -379,7 +379,12 @@ class ModernWebsite {
         const savedTheme = localStorage.getItem('theme') || 'light';
         html.setAttribute('data-theme', savedTheme);
         
-        const toggleTheme = () => {
+        const toggleTheme = (e) => {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
@@ -407,14 +412,29 @@ class ModernWebsite {
             }
         };
         
-        // Add event listeners to both theme toggles
-        if (themeToggle) {
-            themeToggle.addEventListener('click', toggleTheme);
-        }
+        // Enhanced event listeners for iOS
+        const addThemeToggleListeners = (element) => {
+            if (element) {
+                // Add visual feedback for touch
+                const addTouchFeedback = (e) => {
+                    element.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        element.style.transform = 'scale(1)';
+                    }, 150);
+                };
+                
+                element.addEventListener('click', toggleTheme);
+                element.addEventListener('touchstart', (e) => {
+                    addTouchFeedback(e);
+                    toggleTheme(e);
+                }, { passive: false });
+                element.addEventListener('touchend', (e) => e.preventDefault(), { passive: false });
+            }
+        };
         
-        if (themeToggleMobile) {
-            themeToggleMobile.addEventListener('click', toggleTheme);
-        }
+        // Add listeners to both theme toggles
+        addThemeToggleListeners(themeToggle);
+        addThemeToggleListeners(themeToggleMobile);
     }
 
     setupUpButton() {
@@ -430,13 +450,29 @@ class ModernWebsite {
                 }
             };
             
-            // Scroll to top functionality
-            upButton.addEventListener('click', () => {
+            // Scroll to top functionality - enhanced for iOS
+            const scrollToTop = (e) => {
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                
+                // Add visual feedback
+                upButton.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    upButton.style.transform = 'scale(1)';
+                }, 150);
+                
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
-            });
+            };
+            
+            // Add multiple event listeners for better iOS support
+            upButton.addEventListener('click', scrollToTop);
+            upButton.addEventListener('touchstart', scrollToTop, { passive: false });
+            upButton.addEventListener('touchend', (e) => e.preventDefault(), { passive: false });
             
             // Initial check and scroll listener
             toggleUpButton();
