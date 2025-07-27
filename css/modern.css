@@ -4,9 +4,11 @@
 :root {
     /* Colors - Light Mode */
     --primary-color: #6366f1;
+    --primary-color-rgb: 99, 102, 241;
     --primary-dark: #4f46e5;
     --secondary-color: #f8fafc;
     --accent-color: #06b6d4;
+    --accent-color-rgb: 6, 182, 212;
     --text-primary: #1e293b;
     --text-secondary: #64748b;
     --text-muted: #94a3b8;
@@ -46,9 +48,11 @@
 /* Dark Mode Variables */
 [data-theme="dark"] {
     --primary-color: #818cf8;
+    --primary-color-rgb: 129, 140, 248;
     --primary-dark: #6366f1;
     --secondary-color: #1e293b;
     --accent-color: #22d3ee;
+    --accent-color-rgb: 34, 211, 238;
     --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
@@ -795,72 +799,86 @@ a:hover {
     to { width: var(--width); }
 }
 
-/* Certifications Section with Flexbox */
+/* Certifications Section */
 .certifications-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-xl);
-    justify-content: center;
-    /* Prevent grid overflow */
-    width: 100%;
+    margin-top: var(--space-2xl);
 }
 
 .certification-card {
-    background: var(--background);
-    padding: var(--space-xl);
-    border-radius: var(--radius-lg);
-    text-align: center;
-    box-shadow: var(--shadow-md);
-    transition: all var(--transition-normal);
+    background: linear-gradient(135deg, var(--background) 0%, var(--background-alt) 100%);
     border: 1px solid var(--border-color);
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    transition: all var(--transition-normal);
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Prevent card overflow */
+    text-align: center;
+    height: 100%;
+    min-height: 140px;
+    justify-content: center;
+    position: relative;
     overflow: hidden;
 }
 
+.certification-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+}
+
 .certification-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
 }
 
-.cert-logo {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: var(--space-md);
-    /* Ensure logo is responsive */
-    max-width: 100%;
-    height: auto;
-    transition: all var(--transition-normal);
+.certification-card:hover::before {
+    transform: scaleX(1);
 }
 
-[data-theme="dark"] .cert-logo {
-    filter: brightness(0.8) contrast(1.2) invert(0.1);
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: var(--radius-sm);
-    padding: var(--space-sm);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .cert-logo:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-}
-
-.certification-card h3 {
-    margin-bottom: var(--space-sm);
+.certification-title {
+    font-size: 1.125rem;
+    font-weight: 600;
     color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
 }
 
-.certification-card p {
-    color: var(--text-muted);
+.certification-issuer {
     font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    padding: var(--space-xs) var(--space-md);
+    background: rgba(var(--primary-color-rgb), 0.1);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(10px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .certification-card {
+        min-height: 120px;
+        padding: var(--space-lg);
+    }
 }
 
 /* Timeline with Flexbox */
