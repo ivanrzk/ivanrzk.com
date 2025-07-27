@@ -1,472 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Ivan Raczkowski - Network and IT Consultant</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--bootstrap css-->
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <!--custom css-->
-        <link href="css/style.css" rel="stylesheet" type="text/css">
-        <!--flex slider css-->
-        <link href="css/flexslider.css" rel="stylesheet">
-        <!--google web fonts css-->
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
-        <!--ion icons css-->
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <!--<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">-->
-        <!--animated css-->
-        <link href="css/animate.css" rel="stylesheet">
-        <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="js/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body data-spy="scroll" data-target="#navigation" data-offset="80">
-        <section id="home" data-stellar-background-ratio="0.5">
-            <div class="parallax-overlay"></div> 
-            <div class="home-content text-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 home-inner">
-                            <img src="img/personal2.png" alt="personal image" class="wow animated fadeInUp white-border" data-wow-delay="0.3s">
-                            <h3 class="intro-text wow animated fadeInUp " data-wow-delay="0.6s">Ivan Raczkowski</h3>
-                            <h3><p class="lead wow animated bounceIn " data-wow-delay="0.9s"><bold>Networks / IT / DevOps</bold></p></h3>
-                            <p class="wow animated fadeInLeft scrollto" data-wow-delay="1.0s"><a href="#about" class="btn btn-lg btn-border-color"><bold>More about me</bold></a><a href="#contact" class="btn btn-lg btn-border-default">Contact me</a></p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan Raczkowski - DevOps & Security Lead</title>
+    <meta name="description" content="DevOps and Security Lead with over 10 years of experience in infrastructure, automation, and cloud technologies. Expert in Azure, Kubernetes, and network security.">
+    
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Modern CSS -->
+    <link rel="stylesheet" href="css/modern.css">
+    
+    <!-- Smooth scrolling -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#home">Ivan Raczkowski</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#" class="cv-link">Download CV</a></li>
+                <li>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="moon-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Ivan Raczkowski</span>
+                </h1>
+                <p class="hero-subtitle">DevOps & Security Lead</p>
+                <p class="hero-description">
+                    Azure • Kubernetes • Infrastructure Automation • Network Security
+                </p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Learn More</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-dot"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">DevOps and Security specialist from Argentina</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Hello, I'm Ivan</h3>
+                    <p>
+                        As the Head of DevOps and Security Lead with over 10 years of experience in the software industry, 
+                        I specialize in designing and implementing scalable infrastructure solutions that drive business growth.
+                    </p>
+                    <p>
+                        My expertise spans across cloud platforms, containerization, automation, and security. I have successfully 
+                        led teams in implementing CI/CD pipelines, managing Kubernetes clusters, and securing enterprise environments 
+                        for companies ranging from startups to Fortune 500 organizations.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Licenses & Certifications</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="img/profile-optimized.jpg" alt="Ivan Raczkowski - DevOps & Security Lead" class="profile-image" loading="eager">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">My technical capabilities and knowledge areas</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Microsoft Azure</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Kubernetes & Docker</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">CI/CD Pipelines</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Terraform & IaC</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Security & Networking</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Network Security</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Cisco Systems</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Mikrotik</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Penetration Testing</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Infrastructure & Automation</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Linux Administration</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Monitoring & Logging</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Scripting (Bash/Python)</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Git & Version Control</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section><!--home section parallax-->
-        <section id="navigation">
-            <div class="navbar navbar-default navbar-static-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="index.html">Ivan Raczkowski</a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right scrollto">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About Me</a></li>
-                            <li><a href="#knowledge">Knowledge</a></li>
-                            <li><a href="#whatdo">What i do</a></li>
-                            <li><a href="#work">My Work</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a id="pdf" href="CV de Iván Raczkowski.pdf">Download CV</a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div><!--/.container -->
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Licenses & Certifications</h2>
+                <p class="section-subtitle">Professional certifications and achievements</p>
             </div>
-        </section><!--navigation section end here-->
-        <section id="about" class="padding-80">
-            <div class="container">
-                <h1 class="section-heading wow animated fadeInDown" data-wow-delay="0.3s">About Me</h1>
-                <div class="row">
-                    <div class="about-img col-md-12">
-                        <img src="img/personal2.png" alt="" class="wow animated rotateInDownLeft white-border" data-wow-delay="0.6s">
-                    </div>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <img src="img/ccna.png" alt="CCNA" class="cert-logo">
+                    <h3>CCNA</h3>
+                    <p>Cisco Certified Network Associate</p>
                 </div>
-                <div class="row intro-row">
-                    <div class="col-md-12 about-me text-center">
-                        <h1>Hello</h1>
-                        <h2>I am Ivan, a <span>Network</span> and <span>IT</span> specialist from Argentina.</h2>
+                <div class="certification-card">
+                    <img src="img/mtcna1.png" alt="MTCNA" class="cert-logo">
+                    <h3>MTCNA</h3>
+                    <p>Mikrotik Certified Network Associate</p>
+                </div>
+                <div class="certification-card">
+                    <img src="img/mtcre1.png" alt="MTCRE" class="cert-logo">
+                    <h3>MTCRE</h3>
+                    <p>Mikrotik Certified Routing Engineer</p>
+                </div>
+                <div class="certification-card">
+                    <img src="img/mtctce1.jpg" alt="MTCTCE" class="cert-logo">
+                    <h3>MTCTCE</h3>
+                    <p>Mikrotik Certified Traffic Control Engineer</p>
+                </div>
+                <div class="certification-card">
+                    <img src="img/mtcine1.png" alt="MTCINE" class="cert-logo">
+                    <h3>MTCINE</h3>
+                    <p>Mikrotik Certified Inter-Networking Engineer</p>
+                </div>
+                <div class="certification-card">
+                    <img src="img/nse2.png" alt="NSE2" class="cert-logo">
+                    <h3>NSE2</h3>
+                    <p>Fortinet Network Security Associate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Work Experience</h2>
+                <p class="section-subtitle">My professional journey and achievements</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Head of DevOps and Security Lead</h3>
+                            <span class="timeline-company">Miracle Devs</span>
+                            <span class="timeline-period">2021 - Present</span>
+                        </div>
                         <p>
-                        As the Head of DevOps and Security Lead with over 8 years of experience in the software industry, I am passionate about tackling operational challenges, particularly those that involve automation.
-                        </p><br>
-                        <p class="scrollto"><a href="#contact" class="btn btn-theme-color btn-lg">Hire Me</a></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 my-skills">
-                        <h2 class="short-heading">My Skills</h2>
-                        <div class="skills-wrapper wow animated bounceIn" data-wow-delay="0.6s">
-                            <h3 class="heading-progress">Network knowledge<span class="pull-right">80%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="88" role="progressbar">
-                                </div>
-                            </div>
-                            <h3 class="heading-progress">Infrastructure and Virtualization<span class="pull-right">70%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 70%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="78" role="progressbar">
-                                </div>
-                            </div>
-                            <h3 class="heading-progress">Linux and Unix systems <span class="pull-right">76%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 76%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="82" role="progressbar">
-                                </div>
-                            </div>                    
+                            Leading DevOps initiatives and security strategies across the organization. Implementing CI/CD pipelines, 
+                            managing Kubernetes clusters, and ensuring infrastructure security. Driving automation and best practices 
+                            for scalable cloud-native applications.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Azure</span>
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">DevOps</span>
+                            <span class="tag">Security</span>
+                            <span class="tag">CI/CD</span>
                         </div>
                     </div>
-                    <div class="col-md-6 my-skills">
-                        <h2 class="short-heading">&nbsp</h2>
-                        <div class="skills-wrapper wow animated bounceIn" data-wow-delay="0.6s">
-                            <h3 class="heading-progress">Security<span class="pull-right">75%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 75%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="88" role="progressbar">
-                                </div>
-                            </div>
-                            <h3 class="heading-progress">Monitoring Tools<span class="pull-right">85%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 85%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="78" role="progressbar">
-                                </div>
-                            </div>
-                            <h3 class="heading-progress">DevOps Tools <span class="pull-right">78%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 78%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="78" role="progressbar">
-                                </div>
-                            </div>                    
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Infrastructure Consultant</h3>
+                            <span class="timeline-company">Neural Soft</span>
+                            <span class="timeline-period">2016 - 2021</span>
+                        </div>
+                        <p>
+                            Provided comprehensive infrastructure consulting services for diverse clients. Designed and implemented 
+                            network architectures, cloud migrations, and security solutions. Managed complex IT environments and 
+                            delivered automation solutions.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Infrastructure</span>
+                            <span class="tag">Consulting</span>
+                            <span class="tag">Cloud Migration</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Networking and Infrastructure Instructor</h3>
+                            <span class="timeline-company">Educación IT</span>
+                            <span class="timeline-period">2019 - Present</span>
+                        </div>
+                        <p>
+                            Teaching networking and infrastructure courses to IT professionals. Developing course materials, 
+                            conducting hands-on workshops, and helping students achieve industry certifications in networking and cloud technologies.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Teaching</span>
+                            <span class="tag">Networking</span>
+                            <span class="tag">Infrastructure</span>
+                            <span class="tag">IT Training</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Network and IT Support Engineer</h3>
+                            <span class="timeline-company">Neoris</span>
+                            <span class="timeline-period">2014 - 2015</span>
+                        </div>
+                        <p>
+                            Provided technical support and network administration for enterprise clients. Implemented network security 
+                            solutions, managed IT infrastructure, and delivered customer-focused technical solutions.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Network Support</span>
+                            <span class="tag">IT Administration</span>
+                            <span class="tag">Security</span>
+                            <span class="tag">Customer Support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Network and IT Consultant</h3>
+                            <span class="timeline-company">Cetcom</span>
+                            <span class="timeline-period">2011 - 2014</span>
+                        </div>
+                        <p>
+                            Designed and implemented network infrastructure solutions for telecommunications clients. Configured 
+                            routing protocols, managed network security, and provided technical support for enterprise networks.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Network Design</span>
+                            <span class="tag">Telecommunications</span>
+                            <span class="tag">Routing</span>
+                            <span class="tag">Network Security</span>
                         </div>
                     </div>
                 </div>
             </div>
-            </section><!--about section-->
-            <section id="knowledge" class="padding-80">
-            <div class="container">
-               <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="section-heading">Knowledge</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="services wow animated fadeInUp" data-wow-delay="0.3s">
-                            <h2>Education</h2>
-                            <p>Completed third year of Bachelor of Computer Science. Faculty of Exact Sciences - UNR (Universidad Nacional de Rosario).</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="services wow animated fadeInUp" data-wow-delay="0.6s">
-                            <h2>Courses</h2>
-                            <p>CCNA Security. Cisco</p>
-                            <p>Google Cloud Essentials. Google Cloud</p>
-                            <p>AWS Cloud Technical Essentials. Coursera</p>
-                            <p>APIs and Microservices. freeCodeCamp</p>
-                            <p>Responsive Web Design. freeCodeCamp</p>
-                            <p>Scylla Essentials and Scylla Operations. ScyllaDB</p>
-                            <p>Cloud Computing Security. FedVTE</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="services wow animated fadeInUp" data-wow-delay="0.9s">
-                            <h2>Certifications</h2>
-                            <p> CCNA (Cisco Certified Network Associate)</p>
-                            
-                            <p> MTCNA (Mikrotik Certified Network Associate)</p>
-                            
-                            <p> MTCRE (Mikrotik Certified Routing Engineer)</p>
-                            
-                            <p> MTCTCE (Mikrotik Certified Traffic Control Engineer)</p
-                            <p> MTCINE (Mikrotik Certified Inter-Networking Engineer)</p>
+        </div>
+    </section>
 
-                            <p> NSE2 (Fortinet Network Security Associate)</p>
-                        
-                            <p> Hurrican Electric ipv6 Certified </p>    
-                            
-                        </div>
-                    </div>
-                </div>
-             </div>
-             <div class="container">   
-                <div class="row">
-                    <div class="col-md-4" align="center">
-                       <a href="single-cert1.html"><img src="img/mtcna1.png"></a>
-                    </div>
-                    <div class="col-md-4" align="center">
-                       <a href="single-cert1.html"><img src="img/mtcre1.png"></a>
-                    </div>
-                    <div class="col-md-4" align="center">
-                       <a href="single-cert1.html"><img src="img/mtctce1.jpg"></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4" align="center">
-                        <a href="single-cert1.html"><img src="img/mtcine1.png"></a>  
-                    </div>
-                    <div class="col-md-4" align="center">
-                        <a href="single-cert.html"><img src="img/ccna.png"></a> 
-                    </div>
-                    <div class="col-md-4" align="center">
-                       <img src="img/nse2.png">
-                    </div>
-                </div>    
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Let's discuss your next project</p>
             </div>
-        </section><!-- knowledge section--> 
-            <div class="about-section-2 parallax" data-stellar-background-ratio="0.5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <h2>Have interesting <span>Projects?</span></h2>
-                            <p class="lead">If you have interesting projects,you will be satisfied with my services</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:ivan.rzk@gmail.com">ivan.rzk@gmail.com</a>
                         </div>
-                        <div class="col-sm-4">
-                            <a href="#" class="wow animated bounceIn btn btn-theme-color btn-lg" data-wow-delay="0.6s">Let's talk</a> 
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+543462653796">+54 346 265 3796</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <span>Argentina</span>
                         </div>
                     </div>
                 </div>
-            </div> 
-        
-        
-        <section id="whatdo" class="padding-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="section-heading">What i do</h1>
-                    </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/iván-raczkowski-60b31432/" class="social-link" target="_blank">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/ivanrzk" class="social-link" target="_blank">
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://twitter.com/IvanRaczkowski" class="social-link" target="_blank">
+                        <span>Twitter</span>
+                    </a>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="services wow animated fadeInUp" data-wow-delay="0.3s">
-                            <p>I have a strong background in designing, implementing, and maintaining IT and network environments for small, medium, and large companies. I have gained extensive knowledge in administering monitoring and security systems, including automating processes, both on premises and in the cloud. I possess the necessary skills to set up servers for monitoring and filtering network traffic, utilize tools for penetration testing and detecting backdoors, and implement applications for network sniffing and analysis. Additionally, I have experience in implementing firewalls and UTM platforms with Sophos, Check Point, and Fortinet, including configuring rules for web proxy (both explicit and transparent), integrating authentication via Kerberos and NTLM on virtual schemas based on Microsoft systems over Hyper-V, configuring IPS and antivirus controls, and implementing reversing proxy with SSL Portals.</p>
+            </div>
+        </div>
+    </section>
 
-                            <p>My experience has taught me the importance of teamwork, effective communication, and leadership. I take a proactive approach to identifying issues and providing strategic solutions. I am committed to continuous learning and improvement, and I am capable of adapting to changing scenarios.</p>
-                                
-                            <p>Specialties: management, cloud, containers, leadership, strategy, writing, IT and network architecture, virtualization, serverless, Cisco, Mikrotik, Fortinet, Sophos, OpenStack, Google Cloud, AWS, Azure, Kubernetes, Docker, Linux, Ansible, Git, DevOps, CI/CD, Azure DevOps, speaking, lecturing, writing, and certification.</p>
-                            <p>
-                        </div>
-                        <div class="services wow animated fadeInUp" data-wow-delay="0.6s">
-                            <h3>In my current role, I work on:</h3>
-                                <ul class="w">
-                                    <li class="w">Constantly improving existing networks to maximize efficiency and security.</li>
-                                    <li class="w">Developing and implementing new deployment and scaling processes.</li>
-                                    <li class="w">Participating in the creation of automation tools and managing and organizing relevant documents and records.</li>
-                                    <li class="w">Standardizing and generating processes for the implementation of staging and development environments in Microsoft Azure with CI/CD using GitHub Actions and Azure DevOps.</li>
-                                    <li class="w">Implementing Azure AD, as well as configuring and managing the Microsoft 365 suite, including SharePoint and advanced security tools such as Microsoft Intune and Microsoft 365 Defender.</li>
-                                    <li class="w">Conducting ongoing analysis, implementation, and monitoring of information security best practices.</li>
-                                </ul>
-                        </div>
-                    </div>
-                    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Ivan Raczkowski. All rights reserved.</p>
+                <div class="footer-badge">
+                    <a href='https://ipv6-test.com/validate.php?url=referer' target="_blank">
+                        <img src='https://ipv6-test.com/button-ipv6-80x15.png' alt='ipv6 ready' title='ipv6 ready' border='0' />
+                    </a>
                 </div>
             </div>
-            <div class="parallax fun-facts" data-stellar-background-ratio="0.5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 margin-btm-20">
-                            <div class="fact-inner">
-                                <h2 class="counter">34565</h2>
-                                <h4>Projects Complete</h4>
-                            </div>
-                        </div><!--fun col-->
-                        <div class="col-md-3 margin-btm-20">
-                            <div class="fact-inner">
-                                <h2 class="counter">1599</h2>
-                                <h4>Happy Bosses</h4>
-                            </div>
-                        </div><!--fun col-->
-                        <div class="col-md-3 margin-btm-20">
-                            <div class="fact-inner">
-                                <h2 class="counter">99999</h2>
-                                <h4>Songs Listen</h4>
-                            </div>
-                        </div><!--fun col-->
-                        <div class="col-md-3 margin-btm-20">
-                            <div class="fact-inner">
-                                <h2 class="counter">1255</h2>
-                                <h4>Cups of coffee</h4>
-                            </div>
-                        </div><!--fun col-->
-                    </div>
-                </div>
-            </div>
-        </section><!-- what i do section-->
-        <section id="work" class="padding-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="section-heading wow animated bounceIn">Works</h1>
-                    </div>
-                </div>
-            </div> 
-            <div class="work-section-1">              
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="services wow animated fadeInUp" data-wow-delay="0.3s">
-                                <div class="mix col-md-4 col-sm-6 wordpress design margin-btm-20">
-                                    
-                                </div><!--work item-->
-                                <div class="mix col-md-4 col-sm-6 wordpress design margin-btm-20">
-                                    <a href="https://www.miracledevs.com" target="_blank">
-                                        <div class="image-wrapper">
-                                            <img src="img/miracle-logo.png" class="img-responsive" alt="work-1">
-                                            <div class="image-overlay">
-                                                <p> View Site </p>
-                                            </div>  
-                                        </div><!--.image-wrapper-->                                      
-                                    </a>
-                                    <div class="work-sesc">
-                                        <p>
-                                        2021 | Head of DevOps and Security Leader
-                                        </p>
-                                    </div><!--.work-desc-->
-                                </div><!--work item-->
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="services wow animated fadeInUp" data-wow-delay="0.6s">
-                                <div id="grid" class="row">
-                                    <div class="mix col-md-4 col-sm-6 wordpress design margin-btm-20">
-                                        <a href="https://www.educacionit.com/" target="_blank">
-                                            <div class="image-wrapper">
-                                                <img src="img/educacionit.jpg" class="img-responsive" alt="work-1">
-                                                <div class="image-overlay">
-                                                    <p> View Site </p>
-                                                </div>  
-                                            </div><!--.image-wrapper-->                                      
-                                        </a>
-                                        <div class="work-sesc">
-                                            <p>
-                                            2017 | Trainer
-                                            </p>
-                                        </div><!--.work-desc-->
-                                    </div><!--work item-->
-                                    <div class="mix col-md-4 col-sm-6 wordpress design margin-btm-20">
-                                        <a href="https://www.neuralsoft.com" target="_blank">
-                                            <div class="image-wrapper">
-                                                <img src="img/neural.jpg" class="img-responsive" alt="work-1">
-                                                <div class="image-overlay">
-                                                    <p> View Site </p>
-                                                </div>  
-                                            </div><!--.image-wrapper-->                                      
-                                        </a>
-                                        <div class="work-sesc">
-                                            <p>
-                                            2016-2021 | Infraestructure Consultant
-                                            </p>
-                                        </div><!--.work-desc-->
-                                    </div><!--work item-->
-                                    <div class="mix col-md-4 col-sm-6 wordpress design margin-btm-20">
-                                        <a href="https://www.neoris.com" target="_blank">
-                                            <div class="image-wrapper">
-                                                <img src="img/neoris.jpg" class="img-responsive" alt="work-1">
-                                                <div class="image-overlay">
-                                                    <p> View Site </p>
-                                                </div>
-                                            </div><!--.image-wrapper-->                                      
-                                        </a>
-                                        <div class="work-sesc">
-                                            <p>
-                                            2014-2016 | Network and IT Support
-                                            </p>
-                                        </div><!--.work-desc-->
-                                    </div><!--work item-->
-                                    <div class="mix col-md-4 col-sm-6 wordpress design margin-btm-20">
-                                        <div class="image-wrapper">
-                                            <img src="img/cetcom.jpg" class="img-responsive" alt="work-1">
-                                        </div><!--.image-wrapper-->                                      
-                                        <div class="work-sesc">
-                                            <p>
-                                                2011-2014 | Network Consultant
-                                            </p>
-                                        </div><!--.work-desc-->
-                                    </div><!--work item-->
-                                    <div class="mix col-md-4 col-sm-6 wordpress design margin-btm-20">
-                                        <a href="single-work.html" target="_blank">
-                                            <div class="image-wrapper">
-                                                <img src="img/redc.jpeg" class="img-responsive" alt="work-1">
-                                                <div class="image-overlay">
-                                                    <p>
-                                                    View Detail
-                                                    </p>
-                                                </div><!--.image-overlay-->
-                                            </div><!--.image-wrapper-->                                      
-                                        </a>
-                                        <div class="work-sesc">
-                                            <p>
-                                                2011-2012 | Work for Cetcom on a Medic Clinic
-                                            </p>
-                                        </div><!--.work-desc-->
-                                    </div><!--work item-->
-                                    <div class="mix col-md-4 col-sm-6 wordpress design margin-btm-20">
-                                        <a href="https://www.ivanrzk.com/" target="_blank">
-                                            <div class="image-wrapper">
-                                                <img src="img/freelance.jpg" class="img-responsive" alt="work-1">
-                                                <div class="image-overlay">
-                                                    <p> View Site </p>
-                                                </div>  
-                                            </div><!--.image-wrapper-->                                      
-                                        </a>
-                                        <div class="work-sesc">
-                                            <p>
-                                            2011 | Freelance Consultant
-                                            </p>
-                                        </div><!--.work-desc-->
-                                    </div><!--work item-->
-                                </div><!--#grid for filter items-->
-                            </div>
-                        </div><!--.col-md-12 of portfolio filter-->
-                    </div><!--.row-->
-                </div><!--.contianer-->
-            </div><!--work section 1-->
-        </section><!--my work section-->
-        <section id="contact">
-          <div class="follow-me parallax" data-stellar-background-ratio="0.5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h1 class="section-heading">Drop me a line</h1>
-                        
-                            <h2><a href="mailto:ivan.rzk@gmail.com">ivan.rzk@gmail.com</a></h2>
-                            <h3><p style="color: white;">+543462653796</p></h3>
-                    </div>
-                </div> 
-            </div>
-          </div><!--follow me section-->
-        </section><!--contact section-->
-        <section id="follow" >
-            <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 wow animated bounceIn">
-                        <h1 class="section-heading">Follow Me</h1>
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <ul class="social-big list-inline">
-                            <li><a href="http://facebook.com/ivan.raczkowski"><i class="fa fa-facebook fb"  data-toggle="tooltip" title="" data-original-title="Facebook" data-placement="top"></i></a></li>
-                            <li><a href="http://twitter.com/IvanRaczkowski"><i class="fa fa-twitter twt"  data-toggle="tooltip" title="" data-original-title="Twitter" data-placement="top"></i></a></li>
-                            <li><a href="http://ar.linkedin.com/pub/iván-raczkowski/32/314/60b/"><i class="fa fa-linkedin"  data-toggle="tooltip" title="" data-original-title="Linkedin" data-placement="top"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        <br>
+        </div>
+    </footer>
 
-        </section>
-        
-        <footer id="footer" class="padding-50">
-            <div class="container text-center">
-                <!--<h4><a href="#home">Up</a></h4>-->
-                <p>&copy; Copyright 2023. Ivan Raczkowski all right reserved. ivan.rzk@gmail.com</p><!-- IPv6-test.com button BEGIN -->
-<a href='https://ipv6-test.com/validate.php?url=referer'><img src='https://ipv6-test.com/button-ipv6-80x15.png' alt='ipv6 ready' title='ipv6 ready' border='0' /></a>
-<!-- IPv6-test.com button END -->
-            </div>
-        </footer><!--footer-->
-        <!--script files-->
-        <!--<script type="text/javascript" src="http://ipv6.he.net/v4ex/sidebar.js"></script>-->
-        <script src="js/jquery.min.js" type="text/javascript"></script>
-        <script src="js/jquery.easing.1.3.min.js" type="text/javascript"></script>
-        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/jquery.mixitup.min.js" type="text/javascript"></script>
-        <script src="js/jquery.flexslider-min.js" type="text/javascript"></script>
-        <script src="js/wow.min.js" type="text/javascript"></script>
-        <script src="js/jquery.sticky.js" type="text/javascript"></script>        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-        <script src="js/jquery.stellar.min.js" type="text/javascript"></script>
-        <!--new version v1.1 plugin-->
-        <script src="js/jquery.nicescroll.min.js" type="text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-        <script src="js/jquery.counterup.min.js" type="text/javascript"></script>
-        <script src="js/contact_me.js" type="text/javascript"></script>
-        <script src="js/jqBootstrapValidation.js" type="text/javascript"></script> 
-        <script src="js/custom.js" type="text/javascript"></script>
-    </body>
+    <!-- Modern JavaScript -->
+    <script src="js/modern.js"></script>
+</body>
 </html>
