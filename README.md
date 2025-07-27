@@ -1,140 +1,203 @@
 # Ivan Raczkowski - Personal Website
 
-A modern, responsive personal website showcasing Ivan's expertise in Network & IT consulting, DevOps, and security.
+A modern, responsive personal website showcasing Ivan Raczkowski's professional experience, skills, and certifications in DevOps and Security.
 
-## 🎨 Design Features
+## 🚀 Features
 
-This website has been completely modernized with a **Smooothy-inspired design** featuring:
+### **Modern Design**
+- **Smooothy-inspired**: Clean, modern design inspired by the Smooothy library
+- **Flexbox Layout**: Responsive design using CSS Flexbox and Grid
+- **Dark Mode**: Toggle between light and dark themes
+- **Smooth Animations**: CSS transitions and JavaScript-powered animations
+- **Glass Morphism**: Modern UI effects with backdrop filters
 
-- **Modern Typography**: Clean Inter font with JetBrains Mono for code elements
-- **Smooth Animations**: CSS transitions and JavaScript-powered interactions
-- **Responsive Design**: Mobile-first approach with adaptive layouts
-- **Interactive Elements**: Hover effects, scroll animations, and smooth transitions
-- **Performance Optimized**: Lazy loading, debounced scroll events, and efficient animations
+### **Responsive & Accessible**
+- **Mobile-First**: Optimized for all device sizes
+- **Semantic HTML**: Proper structure for accessibility
+- **Performance Optimized**: Fast loading with optimized images
+- **SEO Friendly**: Meta tags and structured content
 
-## 🚀 Key Improvements
-
-### Visual Design
-- **Gradient Text Effects**: Modern gradient text for headings
-- **Floating Animations**: Subtle floating effects for interactive elements
-- **Glass Morphism**: Translucent navigation with backdrop blur
-- **Modern Color Palette**: Professional indigo and cyan color scheme
-- **Card-based Layout**: Clean card designs with subtle shadows
-
-### User Experience
-- **Smooth Scrolling**: Native smooth scrolling with fallbacks
-- **Intersection Observer**: Performance-optimized scroll animations
-- **Mobile Menu**: Animated hamburger menu for mobile devices
-- **Loading Animations**: Progressive reveal of content sections
-- **Hover Effects**: Interactive feedback on all clickable elements
-
-### Technical Features
-- **CSS Custom Properties**: Consistent design tokens and easy theming
-- **Modern JavaScript**: ES6+ features with class-based architecture
-- **Performance**: Optimized animations and lazy loading
-- **Accessibility**: Proper focus states and semantic HTML
-- **Cross-browser**: Compatible with modern browsers
-
-## 📱 Responsive Design
-
-The website is fully responsive with breakpoints for:
-- **Desktop**: 1200px+ (full layout)
-- **Tablet**: 768px-1199px (adaptive grid)
-- **Mobile**: <768px (stacked layout)
-
-## 🎯 Sections
-
-1. **Hero Section**: Animated introduction with floating tech stack
-2. **About**: Personal information with animated statistics
-3. **Skills**: Interactive skill bars with progress animations
-4. **Certifications**: Professional certifications in card layout
-5. **Experience**: Timeline-based work history
-6. **Contact**: Contact information with social links
+### **Interactive Elements**
+- **Smooth Scrolling**: Navigation with smooth scroll behavior
+- **Animated Statistics**: Counter animations for experience metrics
+- **Hover Effects**: Interactive elements with modern hover states
+- **Mobile Navigation**: Simple hamburger menu for mobile devices
 
 ## 🛠️ Technologies Used
 
 - **HTML5**: Semantic markup
-- **CSS3**: Modern features with custom properties
-- **Vanilla JavaScript**: ES6+ with modern APIs
-- **Google Fonts**: Inter and JetBrains Mono
+- **CSS3**: Modern styling with custom properties
+- **Vanilla JavaScript**: No frameworks, pure JS
+- **Google Fonts**: Inter and JetBrains Mono typography
 - **CSS Grid & Flexbox**: Modern layout techniques
+
+## 📁 Project Structure
+
+```
+ivanrzk.com/
+├── index.html          # Main HTML file
+├── css/
+│   └── modern.css      # All styles and responsive design
+├── js/
+│   └── modern.js       # Interactive functionality
+├── img/
+│   ├── profile-optimized.jpg  # Profile image
+│   └── slide-bg.jpg          # Hero background
+└── README.md           # This file
+```
+
+## 🎨 Design Features
+
+### **Color Scheme**
+- **Light Mode**: Clean whites and blues
+- **Dark Mode**: Deep blues and grays
+- **Primary Colors**: Indigo (#6366f1) and Cyan (#06b6d4)
+- **CSS Variables**: Consistent theming throughout
+
+### **Typography**
+- **Primary Font**: Inter (Google Fonts)
+- **Monospace Font**: JetBrains Mono for code elements
+- **Responsive Sizing**: Clamp() functions for fluid typography
+
+### **Layout**
+- **Container**: Max-width 1200px with responsive padding
+- **Grid System**: CSS Grid for certifications and skills
+- **Flexbox**: Navigation and content alignment
+- **Spacing**: Consistent spacing with CSS custom properties
 
 ## 🚀 Getting Started
 
-1. **Clone the repository**:
+### **Local Development**
+
+1. **Clone the repository**
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/ivanrzk/ivanrzk.com.git
    cd ivanrzk.com
    ```
 
-2. **Open in browser**:
+2. **Start local server**
    ```bash
    # Using Python
    python -m http.server 8000
    
-   # Using Node.js
+   # Or using Node.js
    npx serve .
-   
-   # Or simply open index.html in your browser
    ```
 
-3. **Customize**:
-   - Edit `css/modern.css` for styling changes
-   - Modify `js/modern.js` for interaction updates
-   - Update content in `index.html`
+3. **Open in browser**
+   ```
+   http://localhost:8000
+   ```
 
-## 🎨 Customization
+### **Production Deployment**
 
-### Colors
-Update CSS custom properties in `css/modern.css`:
+The website is ready for deployment to any static hosting service:
+- **GitHub Pages**
+- **Netlify**
+- **Vercel**
+- **AWS S3**
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## 🎯 Key Sections
+
+### **Hero Section**
+- Professional introduction
+- Call-to-action buttons
+- Background image with overlay
+
+### **About Section**
+- Professional summary
+- Animated statistics (10+ Years, 50+ Projects, 10+ Certifications)
+- Personal background
+
+### **Skills & Expertise**
+- Technical skills organized by category
+- Progress bars and visual indicators
+- Responsive grid layout
+
+### **Licenses & Certifications**
+- 15 professional certifications
+- Clean card design with hover effects
+- Organized by technology/company
+
+### **Work Experience**
+- Chronological timeline
+- Company details and roles
+- Responsive timeline design
+
+### **Contact Section**
+- Email contact
+- Social media links
+- Professional contact information
+
+## 🔧 Customization
+
+### **Colors**
+Edit CSS variables in `css/modern.css`:
 ```css
 :root {
     --primary-color: #6366f1;
     --accent-color: #06b6d4;
-    /* ... other colors */
+    /* ... other variables */
 }
 ```
 
-### Animations
-Modify animation durations and easing in the CSS variables:
-```css
-:root {
-    --transition-fast: 0.15s ease;
-    --transition-normal: 0.3s ease;
-    --transition-slow: 0.5s ease;
-}
-```
+### **Content**
+- Update personal information in `index.html`
+- Modify certifications list
+- Adjust work experience timeline
+- Update contact information
 
-### Content
-Update the HTML structure in `index.html` to modify:
-- Personal information
-- Skills and percentages
-- Work experience
-- Contact details
+### **Styling**
+- Modify `css/modern.css` for design changes
+- Update animations in `js/modern.js`
+- Adjust responsive breakpoints
 
 ## 📊 Performance
 
-The website is optimized for performance with:
-- **Lazy Loading**: Images load only when needed
-- **Debounced Events**: Scroll events are optimized
-- **CSS Animations**: Hardware-accelerated transforms
-- **Minimal Dependencies**: No external libraries required
+- **Lighthouse Score**: Optimized for performance, accessibility, and SEO
+- **Image Optimization**: Compressed and optimized images
+- **Minimal Dependencies**: No external frameworks
+- **Fast Loading**: Optimized CSS and JavaScript
 
-## 🌐 Browser Support
+## 🌟 Features in Detail
 
-- **Chrome**: 90+
-- **Firefox**: 88+
-- **Safari**: 14+
-- **Edge**: 90+
+### **Dark Mode Toggle**
+- Persistent theme preference (localStorage)
+- Smooth transitions between themes
+- Automatic navbar and footer updates
 
-## 📝 License
+### **Mobile Navigation**
+- Simple hamburger menu
+- Full-screen overlay on mobile
+- Smooth animations and transitions
+
+### **Animated Statistics**
+- Counter animations on scroll
+- Synchronized timing
+- Professional number formatting
+
+### **Smooth Scrolling**
+- Intersection Observer for animations
+- Debounced scroll events
+- Performance optimized
+
+## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🤝 Contributing
+## 👨‍💻 Author
 
-Feel free to submit issues and enhancement requests!
+**Ivan Raczkowski**
+- DevOps & Security Lead
+- 10+ years of experience
+- Expert in Azure, infrastructure automation, and network security
 
 ---
 
-**Built with ❤️ using modern web technologies**
+*Built with ❤️ using modern web technologies*
