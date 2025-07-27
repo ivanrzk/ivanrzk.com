@@ -25,11 +25,12 @@ class ModernWebsite {
         const navLinks = document.querySelectorAll('.nav-link');
         const html = document.documentElement;
 
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
+        // Function to update navbar background based on theme and scroll
+        const updateNavbarBackground = () => {
             const isDark = html.getAttribute('data-theme') === 'dark';
+            const isScrolled = window.scrollY > 50;
             
-            if (window.scrollY > 50) {
+            if (isScrolled) {
                 if (isDark) {
                     navbar.style.background = 'rgba(15, 23, 42, 0.98)';
                 } else {
@@ -44,7 +45,27 @@ class ModernWebsite {
                 }
                 navbar.style.boxShadow = 'none';
             }
+        };
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', updateNavbarBackground);
+
+        // Update navbar when theme changes
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                    updateNavbarBackground();
+                }
+            });
         });
+
+        observer.observe(html, {
+            attributes: true,
+            attributeFilter: ['data-theme']
+        });
+
+        // Initial navbar background
+        updateNavbarBackground();
 
         // Active link highlighting
         const sections = document.querySelectorAll('section[id]');
@@ -373,6 +394,7 @@ class ModernWebsite {
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
+            // Update theme immediately
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             
@@ -381,6 +403,19 @@ class ModernWebsite {
             setTimeout(() => {
                 html.style.transition = '';
             }, 300);
+            
+            // Force navbar update
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                const isDark = newTheme === 'dark';
+                const isScrolled = window.scrollY > 50;
+                
+                if (isScrolled) {
+                    navbar.style.background = isDark ? 'rgba(15, 23, 42, 0.98)' : 'rgba(255, 255, 255, 0.98)';
+                } else {
+                    navbar.style.background = isDark ? 'rgba(15, 23, 42, 0.95)' : 'rgba(255, 255, 255, 0.95)';
+                }
+            }
         });
     }
 }
