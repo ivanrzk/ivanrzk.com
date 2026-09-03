@@ -95,11 +95,11 @@ h3 { font-size: 1.45rem; }
 .source-note { margin: 2rem auto 0; width: min(var(--max), calc(100% - 4rem)); color: var(--ink-soft); font-size: .9rem; }
 .source-note a, .text-link { color: var(--signal); font-weight: 700; text-decoration: none; }
 .timeline { position: relative; }
-.timeline::before { content: ""; position: absolute; top: 0; bottom: 0; left: 150px; width: 1px; background: var(--line); }
-.timeline-entry { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 5rem; padding: 0 0 4rem; }
-.timeline-entry time { color: var(--signal); font: 700 .78rem var(--display); text-align: right; }
+.timeline::before { content: ""; position: absolute; top: 0; bottom: 0; left: 174px; width: 1px; background: var(--line); }
+.timeline-entry { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 3rem; padding: 0 0 4rem; }
+.timeline-entry time { align-self: start; color: var(--signal); font: 700 .78rem var(--display); text-align: right; white-space: nowrap; }
 .timeline-entry > div { position: relative; }
-.timeline-entry > div::before { content: ""; position: absolute; top: .25rem; left: -5.55rem; width: 10px; height: 10px; border: 3px solid var(--tint); background: var(--signal); }
+.timeline-entry > div::before { content: ""; position: absolute; top: .25rem; left: -2.15rem; width: 10px; height: 10px; border: 3px solid var(--tint); background: var(--signal); }
 .timeline-entry p { max-width: 720px; color: var(--ink-soft); }
 .company { margin: .45rem 0 1rem; color: var(--teal) !important; font-weight: 700; }
 .contact-section { color: #fff; background: var(--deep); }
