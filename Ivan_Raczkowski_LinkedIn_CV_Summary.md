@@ -100,7 +100,7 @@ Currently serving as CISO, with responsibility for security governance, ISO/IEC 
 
 ### Pending original certificate confirmation
 
-- ISO 42001 AI Governance Fundamentals
+- ISO 42001 AI Governance Fundamentals (Certiprof)
 - AWS Fundamentals: Addressing Security Risk
 
 ### Networking certifications

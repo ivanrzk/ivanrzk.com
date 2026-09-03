@@ -11,7 +11,7 @@ Use descriptive filenames, for example:
 - Fortinet NSE 3 Certified in Cybersecurity
 - Fortinet FortiGate 7.6 Operator
 - Microsoft Security, Compliance, and Identity Fundamentals
-- ISO 42001 AI Governance Fundamentals
+- ISO 42001 AI Governance Fundamentals (Certiprof)
 - AWS Fundamentals: Addressing Security Risk
 - Cybersecurity Awareness - CAPC
 - MikroTik MTCNA, MTCRE, and MTCINE
