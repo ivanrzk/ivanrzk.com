@@ -51,7 +51,7 @@ button { font: inherit; }
 .eyebrow { display: flex; align-items: center; gap: .7rem; margin: 0 0 1.4rem; color: var(--signal); font: 700 .72rem/1.2 var(--display); letter-spacing: .08em; text-transform: uppercase; }
 .eyebrow span { width: 34px; height: 1px; background: currentColor; }
 h1, h2, h3 { margin: 0; font-family: var(--display); line-height: 1.04; letter-spacing: 0; }
-h1 { max-width: 800px; font-size: clamp(3.2rem, 7vw, 6.6rem); }
+h1 { max-width: 800px; font-size: clamp(3rem, 5.6vw, 5.6rem); }
 h2 { max-width: 700px; font-size: clamp(2.3rem, 5vw, 4.7rem); }
 h3 { font-size: 1.45rem; }
 .hero-lede { max-width: 650px; margin: 2rem 0; color: #d9e7e5; font-size: clamp(1.05rem, 2vw, 1.28rem); }
@@ -113,7 +113,7 @@ h3 { font-size: 1.45rem; }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
-@media (max-width: 800px) {
+@media (max-width: 960px) {
     .nav-shell, .content-grid { width: min(100% - 2.5rem, var(--max)); }
     .nav-shell { padding: 0; }
     .menu-toggle { display: block; }
@@ -121,7 +121,7 @@ h3 { font-size: 1.45rem; }
     .site-menu.open { display: flex; }
     .site-menu a, .site-menu button { padding: .8rem; }
     .icon-button { width: auto; height: auto; text-align: left; }
-    .hero { min-height: auto; padding: 9rem 0 7rem; }
+    .hero { min-height: auto; padding: 8rem 0 5rem; }
     .hero-grid, .two-column { grid-template-columns: 1fr; gap: 3rem; }
     .hero-aside { justify-self: start; width: min(100%, 280px); }
     .scroll-cue { width: min(100% - 2.5rem, var(--max)); margin-bottom: 0; }
