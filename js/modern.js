@@ -1,517 +1,56 @@
-// Modern JavaScript for Personal Website
-class ModernWebsite {
-    constructor() {
-        this.init();
-    }
+(() => {
+    const header = document.querySelector('[data-header]');
+    const menu = document.querySelector('[data-menu]');
+    const menuToggle = document.querySelector('[data-menu-toggle]');
+    const backTop = document.querySelector('[data-back-top]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    init() {
-        this.setupNavigation();
-        this.setupScrollAnimations();
-        this.setupSkillBars();
-        this.setupMobileMenu();
-        this.setupThemeToggle();
-        this.setupUpButton();
-        this.setupSmoothScrolling();
-        this.setupParallaxEffects();
-        this.setupIntersectionObserver();
-        this.setupTypingEffect();
-        this.setupCounterAnimations();
-        this.setupHoverEffects();
-        this.setupCursorEffects();
-        this.setupPerformanceOptimizations();
-        
-        // Remove service worker registration to prevent 404 errors
-        // if ('serviceWorker' in navigator) {
-        //     navigator.serviceWorker.register('/sw.js')
-        //         .then(registration => {
-        //             console.log('SW registered: ', registration);
-        //         })
-        //         .catch(registrationError => {
-        //             console.log('SW registration failed: ', registrationError);
-        //         });
-        // }
-    }
+    const closeMenu = () => {
+        menu?.classList.remove('open');
+        menuToggle?.setAttribute('aria-expanded', 'false');
+    };
 
-    setupNavigation() {
-        const navbar = document.querySelector('.navbar');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const html = document.documentElement;
+    menuToggle?.addEventListener('click', () => {
+        const isOpen = menu?.classList.toggle('open') ?? false;
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
 
-        // Function to update navbar background based on theme and scroll
-        const updateNavbarBackground = () => {
-            const isDark = html.getAttribute('data-theme') === 'dark';
-            const isScrolled = window.scrollY > 50;
-            
-            if (isScrolled) {
-                if (isDark) {
-                    navbar.style.background = 'rgba(15, 23, 42, 0.98)';
-                } else {
-                    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                }
-                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                if (isDark) {
-                    navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-                } else {
-                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                }
-                navbar.style.boxShadow = 'none';
-            }
-        };
+    menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
 
-        // Navbar background on scroll
-        window.addEventListener('scroll', updateNavbarBackground);
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeMenu();
+    });
 
-        // Update navbar when theme changes
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
-                    updateNavbarBackground();
-                }
-            });
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+            const target = document.querySelector(link.getAttribute('href'));
+            if (!target) return;
+            event.preventDefault();
+            target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
         });
+    });
 
-        observer.observe(html, {
-            attributes: true,
-            attributeFilter: ['data-theme']
-        });
+    const updateScrollState = () => {
+        header?.classList.toggle('scrolled', window.scrollY > 24);
+    };
+    updateScrollState();
+    window.addEventListener('scroll', updateScrollState, { passive: true });
 
-        // Initial navbar background
-        updateNavbarBackground();
+    backTop?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
 
-        // Active link highlighting
-        const sections = document.querySelectorAll('section[id]');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Smooth scroll for navigation links
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const href = link.getAttribute('href');
-                if (href.startsWith('#')) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
-    }
-
-    setupScrollAnimations() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, currentObserver) => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
+                    entry.target.classList.add('visible');
+                    currentObserver.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-    }
-
-    setupSkillBars() {
-        const skillBars = document.querySelectorAll('.skill-progress');
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const progressBar = entry.target;
-                    const width = progressBar.style.width;
-                    progressBar.style.width = '0%'; // Reset to animate from 0
-                    setTimeout(() => {
-                        progressBar.style.width = width; // Animate to target width
-                    }, 100);
-                    skillObserver.unobserve(progressBar);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        skillBars.forEach(bar => {
-            skillObserver.observe(bar);
-        });
-    }
-
-    setupMobileMenu() {
-        // Mobile menu is now hidden on small screens, no JavaScript needed
-    }
-
-    setupSmoothScrolling() {
-        // Enhanced smooth scrolling for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    }
-
-    setupParallaxEffects() {
-        // Parallax effect for hero background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                const rate = scrolled * -0.5;
-                hero.style.transform = `translateY(${rate}px)`;
-            }
-        });
-    }
-
-    setupIntersectionObserver() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -20px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe certification cards
-        document.querySelectorAll('.certification-card').forEach(card => {
-            observer.observe(card);
-        });
-
-        // Observe timeline items
-        document.querySelectorAll('.timeline-item').forEach(item => {
-            observer.observe(item);
-        });
-
-        // Observe contact items
-        document.querySelectorAll('.contact-item').forEach(item => {
-            observer.observe(item);
-        });
-    }
-
-    easeOutQuart(t) {
-        return 1 - Math.pow(1 - t, 4);
-    }
-
-    setupTypingEffect() {
-        const heroTitle = document.querySelector('.hero-title .gradient-text');
-        if (heroTitle) {
-            const text = heroTitle.textContent;
-            heroTitle.textContent = '';
-            
-            let i = 0;
-            const typeWriter = () => {
-                if (i < text.length) {
-                    heroTitle.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
-                }
-            };
-            
-            // Start typing effect after a delay
-            setTimeout(typeWriter, 500);
-        }
-    }
-
-    setupCounterAnimations() {
-        const stats = document.querySelectorAll('.stat-number');
-        
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const stat = entry.target;
-                    const originalText = stat.textContent;
-                    const hasPlus = originalText.includes('+');
-                    const endValue = parseInt(originalText.replace('+', ''));
-                    
-                    // Reset to 0
-                    stat.textContent = '0';
-                    
-                    // Faster animation - 1.5 seconds total
-                    const duration = 1500; // 1.5 seconds
-                    const interval = duration / endValue; // Calculate interval based on end value
-                    const step = Math.max(1, Math.ceil(endValue / 50)); // Ensure smooth animation
-                    
-                    const timer = setInterval(() => {
-                        const currentValue = parseInt(stat.textContent);
-                        if (currentValue >= endValue) {
-                            stat.textContent = hasPlus ? `${endValue}+` : endValue.toString();
-                            clearInterval(timer);
-                        } else {
-                            const nextValue = Math.min(currentValue + step, endValue);
-                            stat.textContent = nextValue;
-                        }
-                    }, interval);
-                    
-                    statsObserver.unobserve(stat);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        stats.forEach(stat => {
-            statsObserver.observe(stat);
-        });
-    }
-
-    setupHoverEffects() {
-        // Add hover effects to cards
-        document.querySelectorAll('.certification-card, .contact-item, .social-link').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-4px)';
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
-        });
-    }
-
-    setupCursorEffects() {
-        // Optional: Custom cursor effects
-        const cursor = document.createElement('div');
-        cursor.className = 'custom-cursor';
-        cursor.style.cssText = `
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        `;
-        document.body.appendChild(cursor);
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX - 10 + 'px';
-            cursor.style.top = e.clientY - 10 + 'px';
-            cursor.style.opacity = '1';
-        });
-
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity = '0';
-        });
-
-        // Hide cursor on mobile
-        if ('ontouchstart' in window) {
-            cursor.style.display = 'none';
-        }
-    }
-
-    setupPerformanceOptimizations() {
-        // Debounce scroll events
-        let scrollTimeout;
-        window.addEventListener('scroll', () => {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                // Scroll handling logic
-            }, 16);
-        });
-
-        // Preload critical images
-        const criticalImages = [
-            'img/profile-optimized.jpg'
-        ];
-        
-        criticalImages.forEach(src => {
-            const img = new Image();
-            img.src = src;
-        });
-
-        // Intersection Observer for lazy loading
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-    }
-
-    setupThemeToggle() {
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-        const html = document.documentElement;
-        
-        // Check for saved theme preference or default to light mode
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', savedTheme);
-        
-        const toggleTheme = (e) => {
-            if (e) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-            
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            // Update theme immediately
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            // Add smooth transition
-            html.style.transition = 'all 0.3s ease';
-            setTimeout(() => {
-                html.style.transition = '';
-            }, 300);
-            
-            // Force navbar update
-            const navbar = document.querySelector('.navbar');
-            if (navbar) {
-                const isDark = newTheme === 'dark';
-                const isScrolled = window.scrollY > 50;
-                
-                if (isScrolled) {
-                    navbar.style.background = isDark ? 'rgba(15, 23, 42, 0.98)' : 'rgba(255, 255, 255, 0.98)';
-                } else {
-                    navbar.style.background = isDark ? 'rgba(15, 23, 42, 0.95)' : 'rgba(255, 255, 255, 0.95)';
-                }
-            }
-        };
-        
-        // Enhanced event listeners for iOS
-        const addThemeToggleListeners = (element) => {
-            if (element) {
-                // Add visual feedback for touch
-                const addTouchFeedback = (e) => {
-                    element.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        element.style.transform = 'scale(1)';
-                    }, 150);
-                };
-                
-                element.addEventListener('click', toggleTheme);
-                element.addEventListener('touchstart', (e) => {
-                    addTouchFeedback(e);
-                    toggleTheme(e);
-                }, { passive: false });
-                element.addEventListener('touchend', (e) => e.preventDefault(), { passive: false });
-            }
-        };
-        
-        // Add listeners to both theme toggles
-        addThemeToggleListeners(themeToggle);
-        addThemeToggleListeners(themeToggleMobile);
-    }
-
-    setupUpButton() {
-        const upButton = document.getElementById('up-button');
-        
-        if (upButton) {
-            // Show/hide up button based on scroll position
-            const toggleUpButton = () => {
-                if (window.scrollY > 300) {
-                    upButton.style.display = 'flex';
-                } else {
-                    upButton.style.display = 'none';
-                }
-            };
-            
-            // Scroll to top functionality - enhanced for iOS
-            const scrollToTop = (e) => {
-                if (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-                
-                // Add visual feedback
-                upButton.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    upButton.style.transform = 'scale(1)';
-                }, 150);
-                
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            };
-            
-            // Add multiple event listeners for better iOS support
-            upButton.addEventListener('click', scrollToTop);
-            upButton.addEventListener('touchstart', scrollToTop, { passive: false });
-            upButton.addEventListener('touchend', (e) => e.preventDefault(), { passive: false });
-            
-            // Initial check and scroll listener
-            toggleUpButton();
-            window.addEventListener('scroll', toggleUpButton);
-        }
-    }
-}
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new ModernWebsite();
-});
-
-// Handle page visibility changes
-document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-        // Pause animations when page is not visible
-        document.body.style.animationPlayState = 'paused';
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
     } else {
-        // Resume animations when page becomes visible
-        document.body.style.animationPlayState = 'running';
+        document.querySelectorAll('.reveal').forEach((element) => element.classList.add('visible'));
     }
-});
-
-// Handle window resize
-let resizeTimeout;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-        // Handle resize end
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }, 250);
-});
-
-// Handle orientation change
-window.addEventListener('orientationchange', () => {
-    setTimeout(() => {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }, 100);
-}); 
+})();

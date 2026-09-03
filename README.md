@@ -5,11 +5,10 @@ A modern, responsive personal website showcasing Ivan Raczkowski's professional 
 ## 🚀 Features
 
 ### **Modern Design**
-- **Smooothy-inspired**: Clean, modern design inspired by the Smooothy library
-- **Flexbox Layout**: Responsive design using CSS Flexbox and Grid
-- **Dark Mode**: Toggle between light and dark themes
-- **Smooth Animations**: CSS transitions and JavaScript-powered animations
-- **Glass Morphism**: Modern UI effects with backdrop filters
+- **Editorial technology direction**: Executive profile layout with clear hierarchy and restrained visual language
+- **CSS Grid and Flexbox**: Responsive layout using modern native CSS primitives
+- **Dark Mode**: A single, consistent dark theme
+- **Accessible motion**: Lightweight reveal transitions with a reduced-motion path
 
 ### **Responsive & Accessible**
 - **Mobile-First**: Optimized for all device sizes
@@ -46,17 +45,68 @@ ivanrzk.com/
 └── README.md           # This file
 ```
 
+## Project Documentation
+
+- [Implementation plan](docs/PLAN.md)
+- [Content sources and claim status](docs/CONTENT-SOURCES.md)
+- [UX/UI manual checklist](docs/UX-UI-CHECKLIST.md)
+- [Technical and visual decisions](docs/DECISIONS.md)
+- [Project addendum](ADDENDUM.md)
+- [Changelog](CHANGELOG.md)
+
+The local CV remains the primary content source. LinkedIn is used only as a public reference or through material explicitly shared by the profile owner. Credentials and private profile data are never stored in this repository.
+
+Credly is also tracked as a public source for badge verification, issuer names, issue dates, and expiration states. Expired or candidate badges will not be presented as current certifications.
+
+## Copilot Toolkit
+
+This workspace includes reusable guidance for future iterations:
+
+- `.github/agents/website-modernizer.agent.md` — responsive personal and corporate website specialist.
+- `.github/skills/responsive-personal-site/SKILL.md` — repeatable UX/UI, accessibility, SEO, performance, and validation workflow.
+- `.github/prompts/modernize-personal-website.prompt.md` — task prompt for starting a modernization pass.
+- `.github/agents/linkedin-website-reviewer.agent.md` — privacy-conscious visible-browser profile reviewer.
+- `.github/prompts/review-linkedin-profile.prompt.md` — prompt for an authorized LinkedIn review.
+
+### Manual LinkedIn Review
+
+Use the `LinkedIn Website Reviewer` agent or the `Review LinkedIn Profile` prompt. It uses the integrated visible Playwright browser to open or reuse a tab and lets the profile owner complete login or verification directly. The workflow never requests or stores credentials, codes, cookies, tokens, private messages, or other private profile data.
+
+## Quality Workflow
+
+For every meaningful implementation batch:
+
+1. Update `README.md` with the current structure, commands, and status.
+2. Update `ADDENDUM.md` when sources, claims, assets, or product decisions change.
+3. Update `CHANGELOG.md` with the shipped change and validation result.
+4. Run the focused smoke test and complete the manual UX/UI checklist.
+
+The smoke test will cover page loading, metadata, console/request failures, internal anchors, CV download, external links, mobile navigation, keyboard focus, reduced motion, image stability, and horizontal overflow at desktop, tablet, and mobile viewports.
+
+### Current Implementation Status
+
+- Documentation foundation: complete.
+- Copilot agent, skill, and prompt: complete and frontmatter-validated.
+- Credly source reconciliation: initial public review complete; individual credential URLs pending.
+- Responsive SPA redesign: first implementation batch complete.
+- Automated UI smoke test: pending.
+- Manual UX/UI review: pending.
+- LinkedIn integrated browser review: active; public profile review completed for the authorized visible sections.
+- Executive SPA structure and visual redesign: complete for the first implementation batch.
+- Mobile navigation, dark theme, image loading, and overflow checks: validated in the integrated browser.
+- Desktop browser check at 1440px: page loaded with no failed requests, valid internal targets, safe external link attributes, and no horizontal overflow.
+- Certificate pack: `certificates/` is ready for current, expired, candidate, and pending-confirmation PDFs.
+- Printable CV: `cv.html` includes an `Export PDF` action, and the updated PDF is available from the website navigation.
+
 ## 🎨 Design Features
 
 ### **Color Scheme**
-- **Light Mode**: Clean whites and blues
-- **Dark Mode**: Deep blues and grays
-- **Primary Colors**: Indigo (#6366f1) and Cyan (#06b6d4)
+- **Dark Mode**: Deep petrol surfaces with readable teal and coral accents
 - **CSS Variables**: Consistent theming throughout
 
 ### **Typography**
-- **Primary Font**: Inter (Google Fonts)
-- **Monospace Font**: JetBrains Mono for code elements
+- **Display Font**: Space Grotesk for headings and professional labels
+- **Body Font**: DM Sans for readable long-form content
 - **Responsive Sizing**: Clamp() functions for fluid typography
 
 ### **Layout**
@@ -111,13 +161,13 @@ The website is ready for deployment to any static hosting service:
 - Background image with overlay
 
 ### **About Section**
-- Professional summary
-- Animated statistics (10+ Years, 50+ Projects, 10+ Certifications)
-- Personal background
+- Source-backed professional summary
+- Executive positioning and career through-line
+- No unsupported project metrics
 
 ### **Skills & Expertise**
-- Technical skills organized by category
-- Progress bars and visual indicators
+- Security governance, cloud and DevSecOps, and resilient infrastructure focus areas
+- Technology tags used as context rather than subjective percentage bars
 - Responsive grid layout
 
 ### **Licenses & Certifications**
@@ -167,18 +217,19 @@ Edit CSS variables in `css/modern.css`:
 
 ## 🌟 Features in Detail
 
-### **Dark Mode Toggle**
-- Persistent theme preference (localStorage)
-- Smooth transitions between themes
-- Automatic navbar and footer updates
+### **Dark Mode**
+- Single dark theme for a consistent executive presentation
+- No theme state or storage overhead
+- Header and footer use the same dark visual system
 
 ### **Mobile Navigation**
-- Simple hamburger menu
-- Full-screen overlay on mobile
-- Smooth animations and transitions
+- Compact menu controlled by `aria-expanded`
+- Closes after selecting a section or pressing Escape
+- Responsive panel with keyboard-visible focus states
 
-### **Animated Statistics**
-- Counter animations on scroll
+### **Accessible Motion**
+- Section reveals use `IntersectionObserver` when motion is allowed
+- `prefers-reduced-motion` disables reveal and smooth-scroll animation
 - Synchronized timing
 - Professional number formatting
 
